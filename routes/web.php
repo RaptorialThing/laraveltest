@@ -24,14 +24,42 @@ Route::post('/contact',[
 	'as' => 'contact.store'
 ]);
 
-Route::get('/product/create', [
-	'uses' => 'ProductFormController@createProduct'
-]);
+// Route::middleware('auth')->group(function(){
+	Route::get('/product/create', [
+		'uses' => 'ProductFormController@createProduct'
+	]);
 
-Route::post('/product/create',[
-	'uses' => 'ProductFormController@createForm',
-	'as' => 'product.store'
-]);
+	Route::post('/product/create',[
+		'uses' => 'ProductFormController@createForm',
+		'as' => 'product.store'
+	]);
+
+	Route::get('/product/list', [
+		'uses' => 'ProductFormController@getProductList'
+	]);
+
+	Route::get('/product/{id}', [
+		'uses' => 'ProductFormController@getProduct'
+	]);
+
+	Route::get('/product/{id}/update', [
+		'uses' => 'ProductFormController@getUpdateProduct'
+	]);
+
+	Route::post('/product/{id}/update',[
+		'uses' => 'ProductFormController@postUpdateProduct',
+		'as' => 'product.update'
+	]);	
+
+	Route::get('/product/{id}/delete', [
+		'uses' => 'ProductFormController@deleteProduct'
+	]);
+
+	Route::get('/my/product/list', [
+		'uses' => 'UserController@userProductList'
+	]);
+
+// });
 
 Auth::routes();
 

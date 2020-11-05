@@ -1,6 +1,9 @@
 @extends('layouts.defaultHead')
-<body>
-    <div class="container mt-5">
+@section('navbar')
+    @parent
+@endsection
+@section('content')
+<div class="container mt-5">
 
         <!-- Success message -->
         @if(Session::has('success'))
@@ -20,28 +23,13 @@
             </div>
 
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" name="email" id="email">
+                <label>Description</label>
+                <textarea class="form-control" name="description" id="description" rows="4"></textarea>
             </div>
-
-            <div class="form-group">
-                <label>Phone</label>
-                <input type="text" class="form-control" name="phone" id="phone">
-            </div>
-
-            <div class="form-group">
-                <label>Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject">
-            </div>
-
-            <div class="form-group">
-                <label>Message</label>
-                <textarea class="form-control" name="message" id="message" rows="4"></textarea>
-            </div>
-
             <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
         </form>
     </div>
+@endsection    
 </body>
 
 </html>

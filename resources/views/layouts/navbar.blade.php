@@ -1,10 +1,4 @@
-@extends('layouts.defaultHead')
-@section('navbar')
-    @parent
-@endsection
 
-@section('content')
-    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -54,18 +48,9 @@
                                 <a class="nav-link" href="{{ url('/home') }}">Home</a>
                              </li>  
                             <li class="nav-item"> <a class="nav-link" href="{{ url('/product/list') }}">Gifts</a> </li>
-                             <li class="nav-item">   <a class="nav-link" href="{{ url('/product/create') }}">make new Gift</a></li> 
-                             <li class="nav-item">   <a class="nav-link" href="{{ url('/my/product/list') }}">my maked gifts</a></li> 
+                             <li class="nav-item">   <a class="nav-link" href="{{ url('/product/create') }}">make new Gift</a></li>  
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-@endsection    
-</body>
-</html>

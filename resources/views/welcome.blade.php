@@ -12,11 +12,15 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                /* background-color: #fff; */
+                background: url({{ asset('images/BG_02.png') }});
+                color: #89685d;
+                text-shadow: #f0ebe9 1px 1px 0, #f0ebe9 2px 2px 0, 
+                 #f0ebe9 3px 3px 0, #f0ebe9 4px 4px 0, 
+                 #f0ebe9 5px 5px 0;            
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
+                font-weight: 400;
+                height: 100vh3
                 margin: 0;
             }
 
@@ -49,13 +53,20 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #89685d;
+                text-shadow: #f0ebe9 1px 1px 0, #f0ebe9 2px 2px 0, 
+                 #f0ebe9 3px 3px 0, #f0ebe9 4px 4px 0, 
+                 #f0ebe9 5px 5px 0;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            a:hover {
+                color: #caa37a;;
             }
 
             .m-b-md {
@@ -69,6 +80,8 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/product/list') }}">Gifts</a>
+                        <a href="{{ url('/product/create') }}">make new Gift</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
