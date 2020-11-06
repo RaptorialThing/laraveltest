@@ -24,7 +24,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends git \
-	&& git clone --depth=1 git@github.com:RaptorialThing/laraveltest.git \
+	&& git clone --depth=1 https://github.com/RaptorialThing/laraveltest.git \
 	&& cd laraveltest \
 	&& composer install
 
